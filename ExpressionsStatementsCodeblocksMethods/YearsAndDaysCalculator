@@ -1,4 +1,6 @@
-public static void printYearsAndDays(long minutes) {
+public class YearsAndDaysCalculator {
+
+    public static void printYearsAndDays(long minutes) {
 
         /* Check if input is in range */
         if (minutes < 0L) System.out.println("Invalid Value");
@@ -11,3 +13,4 @@ public static void printYearsAndDays(long minutes) {
             System.out.println(minutes + " min = " + years + " y and " + days + " d");
         }
     }
+}
