@@ -1,0 +1,13 @@
+public static void printYearsAndDays(long minutes) {
+
+        /* Check if input is in range */
+        if (minutes < 0L) System.out.println("Invalid Value");
+
+            /* Convert in years and days */
+        else {
+            long years = minutes / (365L * 24L * 60L);
+            long restMinutes = (minutes % (365L * 24L * 60L));
+            long days = restMinutes / (24L * 60L);
+            System.out.println(minutes + " min = " + years + " y and " + days + " d");
+        }
+    }
