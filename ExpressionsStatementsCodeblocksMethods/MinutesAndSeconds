@@ -1,0 +1,26 @@
+package com.company;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        System.out.println(getDurationString(3465, 21));
+    }
+    public static String getDurationString(int minutes, int seconds) {
+
+        // Check if input is in range
+        if (minutes < 0 || seconds < 0 || seconds > 59) return "invalid value";
+
+        // Convert minutes to hours and minutes
+        int hours = minutes / 60;
+        minutes = minutes % 60;
+
+        // If any of the timeunits is below 10 we want a "0" preceding the number
+        String newHours = hours < 10 ? "0" + hours + "h " : hours + "h ";
+        String newMinutes = minutes < 10 ? "0" + minutes + "m " : minutes + "m ";
+        String newSeconds = seconds < 10 ? "0" + seconds + "s" : seconds + "s";
+
+        // Return String
+        return newHours + newMinutes + newSeconds;
+    }
+}
