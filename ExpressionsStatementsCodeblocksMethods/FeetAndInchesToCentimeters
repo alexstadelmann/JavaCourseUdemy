@@ -1,0 +1,26 @@
+package com.company;
+
+public class Main {
+
+    public static void main(String[] args) {
+        System.out.println(calcFeetAndInchesToCentimeters(33.243));
+    }
+    public static double calcFeetAndInchesToCentimeters(double numberOfFeet, double numberOfInches) {
+
+        // Check if input is within accepted range
+        if (numberOfFeet < 0 || numberOfInches < 0 || numberOfInches > 12) return -1;
+
+        // Convert to centimeters
+        return (12 * numberOfFeet + numberOfInches) * 2.54;
+    }
+    public static double calcFeetAndInchesToCentimeters(double numberOfInches) {
+
+        // Check if input is within accepted range
+        if (numberOfInches < 0) return -1;
+
+        // Convert inches to feet and inches and then to centimeters
+        double newNumberOfFeet = (int) numberOfInches / 12;
+        double newNumberOfInches = numberOfInches % 12.00d;
+        return calcFeetAndInchesToCentimeters(newNumberOfFeet, newNumberOfInches);
+    }
+}
