@@ -1,0 +1,21 @@
+package com.company;
+
+public class Main {
+
+    public static void main(String[] args) {
+	    int sum = 0;
+	    int numberOfHits = 0;
+        for(int i = 1; i <= 1000; i++) {
+            if (i % 3 == 0 && i % 5 == 0) {
+                sum += i;
+                numberOfHits++;
+                System.out.println(i + " can be divided both by 3 and 5");
+
+            }
+            if(numberOfHits == 5) {
+                System.out.println("The sum of the first five numbers divisible by 3 and 5 equals = " + sum);
+                break;
+            }
+        }
+    }
+}
