@@ -1,0 +1,56 @@
+package com.company;
+
+public class Main {
+
+    public static void main(String[] args) {
+        System.out.println(isPalindromeVersionOne(12421));
+        System.out.println(isPalindromeVersionTwo(12421));
+
+    }
+    public static boolean isPalindromeVersionOne (int number) {
+
+        if (number < 0) {
+            number *= -1;
+        }
+
+        // Check how many digits the number has
+        int copyOfNumber = number;
+        int numberOfDigits = 0;
+        while (copyOfNumber > 0) {
+            numberOfDigits++;
+            copyOfNumber /= 10;
+        }
+
+        // Check if the first and last digit are equal
+        while (numberOfDigits >= 2) {
+            if ((number / (int) Math.pow(10, numberOfDigits - 1)) != number % 10) {
+                return false;
+            } else {
+                number /= 10;
+                numberOfDigits = numberOfDigits - 2;
+                number = number % (int) Math.pow(10, numberOfDigits);
+            }
+        }
+        return true;
+    }
+
+       public static boolean isPalindromeVersionTwo (int number) {
+        number = Math.abs(number);
+        int copyOfNumber = number;
+        int lastDigit = 0;
+        int reverse = 0;
+        while (copyOfNumber > 0) {
+            lastDigit = copyOfNumber % 10;
+            reverse *= 10;
+            reverse += lastDigit;
+            copyOfNumber /= 10;
+        }
+
+
+        if (reverse == number) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
