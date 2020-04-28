@@ -1,0 +1,25 @@
+package de.alexstadelmann;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+	Scanner scanner = new Scanner(System.in);
+	int sum = 0;
+	int counter = 1;
+	while (counter <= 10) {
+        System.out.print("Enter number #" + counter + ":");
+	    if(scanner.hasNextInt()) {
+	        sum += scanner.nextInt();
+	        counter++;
+        } else {
+            System.out.println("Invalid Value");
+            scanner.nextLine();
+
+        }
+    }
+	System.out.println("Them sum of the numbers is equal " + sum);
+	scanner.close();
+    }
+
+}
