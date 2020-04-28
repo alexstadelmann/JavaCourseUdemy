@@ -1,0 +1,27 @@
+package de.alexstadelmann;
+import java.util.Scanner;
+public class Main {
+
+    public static void main(String[] args) {
+
+        int min = Integer.MAX_VALUE; int max = Integer.MIN_VALUE; int number = 0;
+
+        Scanner sc = new Scanner(System.in);
+
+        while(true) {
+            System.out.print("Enter number: ");
+            if (sc.hasNextInt()) {
+                number = sc.nextInt();
+                if (number > max) {
+                    max = number;
+                } else if (number < min) {
+                    min = number;
+                }
+            } else {
+                break;
+            }
+        }
+        System.out.println("min = " + min + " and max = " + max);
+        sc.close();
+    }
+}
